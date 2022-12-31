@@ -1,0 +1,6 @@
+/target/
+/.*/
+.nrepl-port
+.DS_Store
+
+/resources/credentials.edn
