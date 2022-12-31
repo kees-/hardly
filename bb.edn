@@ -1,6 +1,5 @@
 {:paths ["."]
- :deps {markdown-clj/markdown-clj {:mvn/version "1.11.4"}
-        kees/hardly {:local/root "."}}
+ :deps {markdown-clj/markdown-clj {:mvn/version "1.11.4"}}
  :tasks {-target {:requires ([babashka.fs :as fs])
                   :task (when-not (fs/directory? "target")
                           (fs/create-dirs "target/public"))}
@@ -15,15 +14,15 @@
                                          :copy-attributes true})}
          index {:doc "Writes an index file with all given HTML content."
                 :depends [-target]
-                :task hardly.index/write!}
+                :task scripts.index/write!}
          build {:doc "Full build of site."
                 :depends [clean -target resources index]}
          changes {:doc "Show what's changed between local and deployed site."
                   :depends [build]
                   :requires ([clojure.edn :as edn])
                   :task (let [{:keys [bucket]} (edn/read-string (slurp "resources/credentials.edn"))]
-                          (shell (-> "aws s3 sync target/public s3://%s --dryrun --exclude *.DS_Store"
-                                     (format bucket))))}
+                          (shell (format "aws s3 sync target/public s3://%s --dryrun --exclude *.DS_Store"
+                                         bucket)))}
          deploy {:doc "Builds and publishes the site online."
                  :depends [build]
                  :requires ([clojure.edn :as edn])

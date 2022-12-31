@@ -1,6 +1,6 @@
-{:title-block {:file "resources/content/index/title.md"}
+{:title-block {:file "content/index/title.md"}
  :content [[:interstice {:content "It is 2022 December 28. I have done a lot of small things over time, lots on the computer, never collected them or told people about them. That is pretty anti... Basically everybody with things online has to describe and self-describe."}]
-           [:quotation {:file "resources/content/magic-mountain.md"}]
+           [:quotation {:file "content/magic-mountain.md"}]
            [:interstice {:content "Here's what was linked on this homepage already."}]
            [:list {:items [{:year 2022
                             :link "projects/g02-graph"
@@ -79,4 +79,4 @@
                             :link "https://flickr.com/photos/_kees_/albums/72157678915029892"
                             :name "photos"
                             :desc "I took a lot of photos from 2015-18, here are some good ones from 2017."}]}]
-           [:interstice {:file "resources/content/index/afterword.md"}]]}
+           [:interstice {:file "content/index/afterword.md"}]]}

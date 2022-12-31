@@ -1,4 +1,4 @@
-(ns hardly.index
+(ns scripts.index
   (:require [clojure.edn :as edn]
             [markdown.core :as md]
             [selmer.parser :as p]))
@@ -45,5 +45,5 @@
 #_{:clj-kondo/ignore [:clojure-lsp/unused-public-var]}
 (defn write!
   []
-  (let [html-str (hydrate "resources/content/index.edn" "templates/index.html")]
+  (let [html-str (hydrate "content/index.edn" "templates/index.html")]
     (spit "target/public/index.html" html-str)))

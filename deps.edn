@@ -1,3 +1,0 @@
-{:paths ["." "src"]
- :deps  {selmer/selmer {:mvn/version "1.12.55"}
-         markdown-clj/markdown-clj {:mvn/version "1.11.4"}}}
