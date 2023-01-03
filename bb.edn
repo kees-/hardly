@@ -2,7 +2,7 @@
  :deps {markdown-clj/markdown-clj {:mvn/version "1.11.4"}}
  :tasks {-target {:requires ([babashka.fs :as fs])
                   :task (when-not (fs/directory? "target")
-                          (fs/create-dirs "target/public"))}
+                          (fs/create-dirs "target/public/posts"))}
          clean {:doc "Removes target."
                 :requires ([babashka.fs :as fs])
                 :task (fs/delete-tree "target")}
@@ -14,9 +14,18 @@
                                          :copy-attributes true})}
          index {:doc "Writes an index file with all given HTML content."
                 :depends [-target]
-                :task scripts.index/write!}
+                :task (exec 'scripts.render/write-index!)
+                :exec-args {:content "content/index.edn"
+                            :template "templates/index.html"
+                            :target "target/public/index.html"}}
+         post-list {:task (exec 'scripts.render/write!)
+                    :exec-args {:outfile "target/public/posts/index.html"
+                                :template "templates/post-list.html"
+                                :data {}}}
+         write-all-posts {:task (exec 'scripts.render/write-all-posts!)
+                          :exec-args {:dir "content/posts"}}
          build {:doc "Full build of site."
-                :depends [clean -target resources index]}
+                :depends [clean -target resources index write-all-posts post-list]}
          changes {:doc "Show what's changed between local and deployed site."
                   :depends [build]
                   :requires ([clojure.edn :as edn])

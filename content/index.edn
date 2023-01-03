@@ -1,4 +1,5 @@
 {:title-block {:file "content/index/title.md"}
+ :index? true
  :content [[:interstice {:content "It is 2022 December 28. I have done a lot of small things over time, lots on the computer, never collected them or told people about them. That is pretty anti... Basically everybody with things online has to describe and self-describe."}]
            [:quotation {:file "content/magic-mountain.md"}]
            [:interstice {:content "Here's what was linked on this homepage already."}]
@@ -7,7 +8,7 @@
                             :name "amoe.ba"
                             :desc "To do with the website <a href='https://are.na/'>are.na</a>. Check it out!"}
                            {:year 2022
-                            :link "projects/g02-grip"
+                            :link "projects/d02-grip"
                             :name "grip"
                             :desc "Interactive logic machine demo like a game board."}
                            {:year 2022
@@ -60,6 +61,7 @@
                             :name "revival"
                             :desc "I held a live-in art show a few weeks before covid and made it as much of a nightmare as it could have been."}
                            {:year 2019
+                            :link "https://vimeo.com/785335502"
                             :name "waited"
                             :desc "About half an hour of video providing background visuals for a dance show with friends."}
                            {:year 2019

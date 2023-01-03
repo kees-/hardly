@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{title|default:"Hardly is"}}</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+  <link rel="icon" type="image/x-icon" href="/assets/favicon/favicon.ico">
+  <link rel="manifest" href="/assets/favicon/site.webmanifest">
+  <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#FF8AD8">
+  <meta name="msapplication-TileColor" content="#FF8AD8">
+  <meta name="theme-color" content="#ffffff">
+  <base target="_blank">
+  <meta property="og:site_name" content="hardly">{% block metadata %}{% endblock %}{% if code? %}
+  <link href="https://unpkg.com/prismjs@1.29.0/themes/prism-solarizedlight.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min.css" rel="stylesheet">
+{% endif %}  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+
+<body>
+  <header>
+    <nav>
+{% include "templates/topbar.html" %}    </nav>
+{% block header %}{% endblock %}
+  </header>
+  <main>{% block main %}{% endblock %}  </main>
+{% if code? %}  <script src="https://unpkg.com/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://unpkg.com/prismjs@1.29.0/components/prism-clojure.min.js"></script>
+  <script src="https://unpkg.com/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min.js"></script>
+  <script src="https://unpkg.com/prismjs@1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>{% endif %}
+</body>
+
+</html>

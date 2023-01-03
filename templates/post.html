@@ -1,0 +1,29 @@
+{% extends "templates/page.html" %}
+
+{% block metadata %}
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="https://hardly.link/posts/{{slug}}.html">
+  <meta property="og:title" content="{{title}}">
+  <meta property="og:description" content="{{byline|default:"Hardly"}}">
+  <meta property="article:published_at" content="{{date|date:"yyyy-MM-dd'T'HH:mm:ss"}}">
+  <meta property="article:publisher" content="Kees">
+  <meta property="article:author" content="Kees">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:image" content="{{thumb|default:"https://hardly.link/assets/favicon/android-chrome-192x192.png"}}">
+  <meta name="twitter:title" content="{{title|default:"Hardly"|abbr-ellipsis:"…"|abbreviate:70}}">
+  <meta name="twitter:site" content="Hardly">
+  <meta name="twitter:creator" content="Kees">
+  <meta property="twitter:author" content="Kees">
+  <meta property="twitter:description" content="{{byline|default:"Hardly"|abbr-ellipsis:"…"|abbreviate:200}}">
+  <meta name="canonical" content="https://hardly.link/posts/{{slug}}.html">{% endblock %}
+
+{% block header %}    <h1 class="title">{{title}}</h1>
+    <time datetime="{{date|date:"yyyy-MM-dd'T'HH:mm:ss"}}">{{date|date:"yyyy-MM-dd"}}</time>
+{% if byline %}    <div class="title-block description">{{byline}}</div>{% endif %}{% endblock %}
+
+{% block main %}
+    <article>
+      {{content|safe}}
+    </article>
+{% endblock %}
