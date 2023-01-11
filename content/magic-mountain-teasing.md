@@ -1,5 +1,7 @@
-Title: Teasing/Viaticum/Interrupted Mirth
-Attribution: <em>The Magic Mountain</em>, Thomas Mann, tr. Woods
+---
+title: Teasing/Viaticum/Interrupted Mirth
+attribution: <em>The Magic Mountain</em>, Thomas Mann, tr. Woods
+---
 
 “I’ve never smoked,” Joachim replied; “why should I start up here, of all places?”
 

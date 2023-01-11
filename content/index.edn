@@ -1,7 +1,7 @@
 {:title-block {:file "content/index/title.md"}
  :index? true
  :content [[:interstice {:content "It is 2022 December 28. I have done a lot of small things over time, lots on the computer, never collected them or told people about them. That is pretty anti... Basically everybody with things online has to describe and self-describe."}]
-           [:quotation {:file "content/magic-mountain.md"}]
+           [:quotation {:file "content/magic-mountain-teasing.md"}]
            [:interstice {:content "Here's what was linked on this homepage already."}]
            [:list {:items [{:date 2022
                             :link "projects/g02-graph"

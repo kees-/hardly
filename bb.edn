@@ -1,10 +1,10 @@
 {:paths ["."]
  :deps {markdown-clj/markdown-clj {:mvn/version "1.11.4"}}
  :tasks {-target {:requires ([babashka.fs :as fs])
-                  :task (when-not (fs/directory? "target")
-                          (fs/create-dirs "target/public/posts"))}
+                  :task (fs/create-dirs "target/public/posts")}
          -write-all-posts {:task (exec 'scripts.render/write-all-posts!)
-                           :exec-args {:dir "content/posts"}}
+                           :exec-args {:source-dir "content"
+                                       :posts-dir "posts"}}
          clean {:doc "Removes target."
                 :requires ([babashka.fs :as fs]
                            [selmer.parser :as p])
@@ -29,7 +29,7 @@
          changes:soft {:doc "Show what's changed without rebuild."
                        :requires ([clojure.edn :as edn])
                        :task (let [{:keys [bucket]} (edn/read-string (slurp "resources/credentials.edn"))]
-                               (shell (format "aws s3 sync target/public s3://%s --dryrun --exclude *.DS_Store"
+                               (shell (format "aws s3 sync target/public s3://%s --dryrun --exclude *.DS_Store --size-only"
                                               bucket)))}
          changes {:doc "Show what's changed between local and deployed site."
                   :depends [build changes:soft]}

@@ -3,7 +3,7 @@
 {% block metadata %}
   <meta property="og:type" content="article">
   <meta property="og:locale" content="en_US">
-  <meta property="og:url" content="https://hardly.link/posts/{{slug}}.html">
+  <meta property="og:url" content="https://hardly.link/{{posts-dir}}/{{slug}}.html">
   <meta property="og:title" content="{{title}}">
   <meta property="og:description" content="{{byline|default:"Hardly"}}">
   <meta property="article:published_at" content="{{date|date:"yyyy-MM-dd'T'HH:mm:ss"}}">
@@ -16,7 +16,7 @@
   <meta name="twitter:creator" content="Kees">
   <meta property="twitter:author" content="Kees">
   <meta property="twitter:description" content="{{byline|default:"Hardly"|abbr-ellipsis:"…"|abbreviate:200}}">
-  <meta name="canonical" content="https://hardly.link/posts/{{slug}}.html">{% endblock %}
+  <meta name="canonical" content="https://hardly.link/{{posts-dir}}/{{slug}}.html">{% endblock %}
 
 {% block header %}    <h1 class="title">{{title}}</h1>
     <time datetime="{{date|date:"yyyy-MM-dd'T'HH:mm:ss"}}">{{date|date:"yyyy-MM-dd"}}</time>
