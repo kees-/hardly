@@ -1,0 +1,16 @@
+{% extends "templates/page.html" %}
+
+{% block header %}
+    <h2>Apparently I'm making posts</h2>
+{% endblock %}
+
+{% block main %}
+    <section class="content">
+      <ul>{% for post in posts %}
+        <li>
+          <date>{{post.date|date:"yyyy-MM-dd"}}</date>
+          <a href="{{post.slug}}.html" target="_self" style="white-space:unset;">{{post.title}}</a>
+        </li>{% endfor %}
+      </ul>
+    </section>
+{% endblock %}

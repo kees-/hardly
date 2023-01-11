@@ -3,81 +3,86 @@
  :content [[:interstice {:content "It is 2022 December 28. I have done a lot of small things over time, lots on the computer, never collected them or told people about them. That is pretty anti... Basically everybody with things online has to describe and self-describe."}]
            [:quotation {:file "content/magic-mountain.md"}]
            [:interstice {:content "Here's what was linked on this homepage already."}]
-           [:list {:items [{:year 2022
+           [:list {:items [{:date 2022
                             :link "projects/g02-graph"
                             :name "amoe.ba"
                             :desc "To do with the website <a href='https://are.na/'>are.na</a>. Check it out!"}
-                           {:year 2022
+                           {:date 2022
                             :link "projects/d02-grip"
                             :name "grip"
                             :desc "Interactive logic machine demo like a game board."}
-                           {:year 2022
+                           {:date 2022
                             :link "projects/a03-alef"
                             :name "alef"
                             :desc "Mini hash router demo."}
-                           {:year 2021
+                           {:date 2021
                             :link "sicp"
                             :name "sicp"
                             :desc "Just a rehosted version of the classic book."}
-                           {:year 2021
+                           {:date 2021
                             :link "a"
                             :name "ads"
                             :desc "What I made with a tool called ads."}]}]
-           [:interstice {:content "Then, these are more things from the last few years.\n\nJust personal projects, this excludes things done in groups and lots of inconsequential writing and music."}]
-           [:list {:items [{:year 2022
+           [:interstice {:content "Small and weird new programming projects."}]
+           [:list {:items [{:date 2023
+                            :link "https://github.com/kees-/mag-stripe"
+                            :name "mag stripe"
+                            :desc "Scrape posts from a select number of art, culture, and fashion publications."}
+                           {:date 2022
                             :link "https://github.com/kees-/hardly"
                             :name "hardly"
                             :desc "This website."}
-                           {:year 2022
+                           {:date 2022
                             :link "https://github.com/kees-/superstack"
                             :name "superstack"
-                            :desc "Archive or rehost a substack blog."}
-                           {:year 2021
+                            :desc "Archive or rehost a substack blog."}]}]
+           [:interstice {:content "Then, these are more things from the last few years.\n\nJust personal projects, this excludes things done in groups and lots of inconsequential writing and music."}]
+           [:list {:items [{:date 2021
                             :name "tai xuan jing"
                             :desc "I set the entire content of <a href='https://history.berkeley.edu/michael-nylan'>Michael Nylan's 1993 commentary</a> on the <a href='https://en.wikipedia.org/wiki/Taixuanjing'>tai xuan jing</a> for personal use."}
-                           {:year 2021
+                           {:date 2021
                             :name "speed"
                             :desc "A file sharing utility focused on competition over collaboration."}
-                           {:year 2021
+                           {:date 2021
                             :link "https://github.com/kees-/ads"
                             :name "ads"
                             :desc "An interactive shell script called the American Dream Suite. This was my first complex programming project."}
-                           {:year 2021
+                           {:date 2021
                             :name "lets talk"
                             :desc "Another looping animated video, I don't like this one."}
-                           {:year 2020
+                           {:date 2020
                             :link "https://kees-media.s3.us-west-1.amazonaws.com/there/frame2.mp4"
                             :name "denial"
                             :desc "A looping animated video."}
-                           {:year 2020
+                           {:date 2020
                             :link "https://kees-media.s3.us-west-1.amazonaws.com/there/frame.mp4"
                             :name "abalone"
                             :desc "My first animated video in the \"glass\" style."}
-                           {:year 2020
+                           {:date 2020
                             :link "https://vimeo.com/678002505"
                             :name "as"
                             :desc "Three animated videos. The music is from Maral, Dadisi Komolafe, and Elysia Crampton! There's something for everybody, please take a look!"}
-                           {:year 2020
+                           {:date 2020
                             :name "revival"
                             :desc "I held a live-in art show a few weeks before covid and made it as much of a nightmare as it could have been."}
-                           {:year 2019
+                           {:date 2019
                             :link "https://vimeo.com/785335502"
                             :name "waited"
                             :desc "About half an hour of video providing background visuals for a dance show with friends."}
-                           {:year 2019
+                           {:date 2019
                             :name "tejon"
                             :desc "I had to make a book for a photo class. This one is too funny! It's one of my favorite projects ever. It is a photo-novel called <em>Majesty of Tejon</em>. You can see the photos I used <a href='https://flickr.com/photos/_kees_/albums/72177720303714646'>here</a>."}
-                           {:year 2018
+                           {:date 2018
                             :link "https://flickr.com/photos/_kees_/albums/72157692635127484"
                             :name "photos"
                             :desc "Photos I liked from 2018."}
-                           {:year 2018
+                           {:date 2018
                             :name "garden"
                             :desc "Very quirked short video right when I came out."}
-                           {:year 2018
+                           {:date 2018
                             :name "station"
                             :desc "Awesome photo project, a grisly mental map of the I-5 central valley corridor."}
-                           {:year 2017
+                           {:date 2017
                             :link "https://flickr.com/photos/_kees_/albums/72157678915029892"
                             :name "photos"
                             :desc "I took a lot of photos from 2015-18, here are some good ones from 2017."}]}]

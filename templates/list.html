@@ -1,7 +1,7 @@
     <section class="content">
       <ul>{% for item in items %}
         <li>
-          <span class="year">{{item.year}}</span>
+          <date>{{item.date}}</date>
           <a{% if item.link %} href="{{item.link}}"{% endif %}{% if item.long-title %} title="{{item.long-title}}"{% endif %}>{{item.name|lower}}</a>
           <span class="desc">{{item.desc|safe}}</span>
         </li>{% endfor %}

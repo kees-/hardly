@@ -6,7 +6,10 @@
             [scripts.elements :as elements]
             [selmer.parser :as p]))
 
-(defn limit
+(defn- limit
+  "Smart limiting for trimming strings with a maximum length.
+   Limited strings will be shrunk through the first `break` regex,
+   defaulting to whitespace. An ellipsis for limited strings can be provided."
   ([s len] (limit s len #"\s" ""))
   ([s len break] (limit s len break ""))
   ([s len break ellipsis]
@@ -19,25 +22,26 @@
           tr)
         ellipsis)))))
 
-(defn slugify
+(defn- slugify
+  "Make a string friendly for URLs."
   ([s] (-> s s/lower-case (s/replace #"[_\W]" "-")))
   ([s & limits] (slugify (apply limit s limits))))
 
-(defn hydrate
-  "Renders HTML string for the index file based on local paths to source data and template."
-  [source template]
-  (let [data (-> (slurp source)
+(defmulti ^:private pre-render
+  "Coerces data from a file into a format friendly to markdown-clj."
+  fs/extension)
+
+(defmethod pre-render :default
+  [& _]
+  (println "Problem"))
+
+(defmethod pre-render "edn"
+  [path]
+  (let [data (-> (slurp (fs/file path))
                  edn/read-string
                  (update :content #(reduce str (mapv elements/render %)))
                  (update :title-block elements/file-or-content->md))]
-    (p/render-file template data)))
-
-(defn write-index!
-  [{:keys [content template target]}]
-  (let [html (hydrate content template)]
-    (spit target html)))
-
-(defmulti pre-render fs/extension)
+    data))
 
 (defmethod pre-render "md"
   [path]
@@ -45,7 +49,7 @@
                                  (slurp (fs/file path))
                                  :heading-anchors true
                                  :footnotes? true
-                                 :code-style #(str "class=\"lang-" % "\""))
+                                 :code-style #(format "class=\"lang-%s\"" %))
         title (-> path fs/file-name fs/split-ext first)
         post (merge {:title title
                      :slug (slugify title)
@@ -54,13 +58,23 @@
     post))
 
 (defn write!
+  "Write a template given in and outfile paths.
+   `data` can be a filepath or a clj object."
   [{:keys [data outfile template]}]
-  (spit outfile (p/render-file template data)))
+  (spit outfile (p/render-file template
+                               (cond-> data
+                                 (string? data) pre-render))))
 
 (defn write-all-posts!
+  "Writes HTML pages for all posts, and an index linking them."
   [{:keys [dir]}]
-  (let [paths (fs/list-dir dir)]
-    (doseq [post (map pre-render paths)]
+  (let [paths (remove #(= \- (first (fs/file-name %)))
+                      (fs/list-dir dir)) ;; Ignore files starting with "-"
+        posts (map pre-render paths)]
+    (doseq [post posts]
       (write! {:data post
                :template "templates/post.html"
-               :outfile (format "target/public/posts/%s.html" (:slug post))}))))
+               :outfile (format "target/public/posts/%s.html" (:slug post))}))
+    (write! {:data {:posts (reverse (sort-by :date posts))}
+             :template "templates/posts-index.html"
+             :outfile "target/public/posts/index.html"})))

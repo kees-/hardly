@@ -6,19 +6,21 @@ The tools used are
 - [selmer](https://github.com/yogthos/Selmer)
 - [markdown-clj](https://github.com/yogthos/markdown-clj)
 
-Everything is powerful enough where I just need the basic commands from each tool/lib, there is no monkey business involved in throwing a simple site up.
+Everything is powerful enough where I just need the basic commands from each tool/lib. There is no monkey business involved in throwing a simple site up.
 
 ```
 $ bb tasks
 
 The following tasks are available:
 
-clean     Removes target.
-resources Copy all generic assets to `target`.
-index     Writes an index file with all given HTML content.
-build     Full build of site.
-changes   Show what's changed between local and deployed site.
-deploy    Builds and publishes the site online.
+clean        Removes target.
+resources    Copy all generic assets to `target`.
+index        Writes an index file with all given HTML content.
+build        Full build of site.
+changes:soft Show what's changed without rebuild.
+changes      Show what's changed between local and deployed site.
+deploy:soft  Publish current files without building.
+deploy       Builds and publishes the site online.
 ```
 
 ## Caveats

@@ -19,17 +19,18 @@
 
 /* ========== PAGEWIDE STYLE ================================================ */
 body {
-  padding: 1.75rem;
+  margin: 1.75rem;
   display: flex;
   flex-flow: column;
   gap: 1.5rem;
-  font-family: "Lora", serif;
+  font-family: 'Lora', serif;
   font-size: 1.2rem;
   line-height: 1.6;
 }
 
 p {
   font-size: 1.1rem;
+  max-width: 65ch;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -136,7 +137,7 @@ time {
 pre code {
   font-size: 0.9rem !important;
   line-height: 1rem !important;
-  font-family: 'Fira Code' !important;
+  font-family: 'Fira Code', monospace !important;
 }
 
 blockquote {
@@ -201,9 +202,10 @@ blockquote em, blockquote i {
   text-align: end;
 }
 
-.year {
+.content date {
   font-weight: 700;
   font-family: sans-serif;
+  white-space: nowrap;
 }
 
 ul, ol {
@@ -212,6 +214,7 @@ ul, ol {
 
 .content ul {
   margin-left: 1.5rem;
+  padding-inline: 0;
   display: flex;
   flex-flow: column nowrap;
   gap: 0.3rem;
@@ -252,20 +255,35 @@ a.page-link[href]:active {
 /* ========== MOBILE ======================================================== */
 @media screen and (orientation: portrait) and (max-width: 550px) {
   body {
-    padding: 1rem;
-    font-size: 1rem;
+    margin: 1rem;
     line-height: 1.5;
   }
-  p, h1, h2, h3, h4, h5, h6 {
-    max-width: 65ch;
-    font-size: 1rem;
-    font-weight: 400;
+
+  p {
+    font-size: unset;
   }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  h3 {
+    font-size: 1.15rem;
+  }
+
   .content ul {
     margin-left: 0.75rem;
   }
 
   pre code {
     font-size: 0.8rem !important;
+  }
+
+  main article {
+    margin: unset;
   }
 }
