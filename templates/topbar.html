@@ -1,6 +1,7 @@
       <div class="topbar">
         <div class="return">{% if not index? %}
           <a href="/" target="_self">&leftarrow;</a>
-          {% endif %}</div>
+          {% endif %}</div>{% if not index? %}
+        <a href="/posts/feed.xml" class="page-link" target="_self">feed</a>{% endif %}
         <a href="/posts" class="page-link" target="_self">posts</a>
       </div>

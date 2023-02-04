@@ -23,6 +23,8 @@ deploy:soft  Publish current files without rebuild.
 deploy       Builds and publishes the site online.
 ```
 
+The project is inspired by [quickblog](https://github.com/borkdude/quickblog)! Note! I don't have hot reload. For actually iterating content, I'm using a Markdown editor. I built this to learn and incorporate extensible templates. For your own simple blog, I recommend quickblog instead.
+
 ## Structure
 
 What does this do?

@@ -9,35 +9,46 @@
                 :requires ([babashka.fs :as fs]
                            [selmer.parser :as p])
                 :task (do
+                        (when (fs/exists? "target")
+                          (println "Removing existing target"))
                         (fs/delete-tree "target")
                         (p/cache-off!))}
          resources {:doc "Copy all generic assets to `target`."
                     :requires ([babashka.fs :as fs])
-                    :task (fs/copy-tree "resources/public"
-                                        "target/public"
-                                        {:replace-existing true
-                                         :copy-attributes true})}
+                    :task (do
+                            (println "Copying assets")
+                            (fs/copy-tree "resources/public"
+                                          "target/public"
+                                          {:replace-existing true
+                                           :copy-attributes true}))}
          index {:doc "Writes an index file with all given HTML content."
                 :depends [-target]
                 :requires ([scripts.render])
-                :task (exec 'scripts.render/write!)
+                :task (do (println "Writing index")
+                          (exec 'scripts.render/write!))
                 :exec-args {:data "content/index.edn"
                             :template "templates/index.html"
                             :outfile "target/public/index.html"}}
          build {:doc "Full build of site."
                 :depends [clean -target resources index -write-all-posts]}
+
          changes:soft {:doc "Show what's changed without rebuild."
                        :requires ([clojure.edn :as edn])
-                       :task (let [{:keys [bucket]} (edn/read-string (slurp "resources/credentials.edn"))]
-                               (shell (format "aws s3 sync target/public s3://%s --dryrun --exclude *.DS_Store --size-only"
-                                              bucket)))}
+                       :task (let [{:keys [bucket]} (edn/read-string (slurp "resources/credentials.edn"))
+                                   full (if (some #{":full"} *command-line-args*)
+                                          "" "--size-only")]
+                               (shell (format "aws s3 sync target/public s3://%s --dryrun --exclude *.DS_Store %s"
+                                              bucket full)))}
          changes {:doc "Show what's changed between local and deployed site."
                   :depends [build changes:soft]}
+
          deploy:soft {:doc "Publish current files without building."
                       :requires ([clojure.edn :as edn])
-                      :task (let [{:keys [bucket dist]} (edn/read-string (slurp "resources/credentials.edn"))]
-                              (shell (format "aws s3 sync target/public s3://%s --exclude *.DS_Store"
-                                             bucket))
+                      :task (let [{:keys [bucket dist]} (edn/read-string (slurp "resources/credentials.edn"))
+                                  full (if (some #{":full"} *command-line-args*)
+                                         "" "--size-only")]
+                              (shell (format "aws s3 sync target/public s3://%s --exclude *.DS_Store %s"
+                                             bucket full))
                               (shell (format "aws cloudfront create-invalidation --distribution-id %s --paths \"/*\""
                                              dist)))}
          deploy {:doc "Builds and publishes the site online."

@@ -8,7 +8,7 @@
     <section class="content">
       <ul>{% for post in posts %}
         <li>
-          <date>{{post.date|date:"yyyy-MM-dd"}}</date>
+          <date>{{post.date|date:"yyyy-MM-dd"|default:"&bull;"|safe}}</date>
           <a href="{{post.slug}}.html" target="_self" style="white-space:unset;">{{post.title}}</a>
         </li>{% endfor %}
       </ul>
