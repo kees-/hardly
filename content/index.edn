@@ -25,6 +25,14 @@
                             :desc "What I made with a tool called ads."}]}]
            [:interstice {:text "Small and weird new programming projects."}]
            [:list {:items [{:date 2023
+                            :link "https://github.com/kees-/clytemnestra"
+                            :name "clytemnestra"
+                            :desc "A <a href='https://www.dangermouse.net/esoteric/piet.html'>piet</a> interpreter."}
+                           {:date 2023
+                            :link "https://github.com/kees-/scumm-zip"
+                            :name "scumm-zip"
+                            :desc "clojure.zip and game dialogues"}
+                           {:date 2023
                             :link "https://github.com/kees-/mag-stripe"
                             :name "mag stripe"
                             :desc "Scrape posts from a select number of art, culture, and fashion publications."}
@@ -36,6 +44,7 @@
                             :link "https://github.com/kees-/superstack"
                             :name "superstack"
                             :desc "Archive or rehost a substack blog."}]}]
+           [:quotation {:file "content/magic-mountain-humaniora.md"}]
            [:interstice {:text "Then, these are more things from the last few years.\n\nJust personal projects, this excludes things done in groups and lots of inconsequential writing and music."}]
            [:list {:items [{:date 2021
                             :name "tai xuan jing"

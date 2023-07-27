@@ -4,3 +4,4 @@
 .DS_Store
 
 /resources/credentials.edn
+/resources/public/projects/

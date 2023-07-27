@@ -1,0 +1,18 @@
+---
+title: Humaniora
+attribution: <em>The Magic Mountain</em>, Thomas Mann, tr. Woods
+---
+
+And there he stood before them, his cigar held between the first and second fingers of his gigantic right hand. “How’s your cabbage-roll doing, Castorp? Let me have a look. I’m a connoisseur. Good ash—what brand of lovely brunette is she?”
+
+“Maria Mancini, *Poste de Banquette*, from Bremen, Director Behrens. Costs little or nothing, a mere nineteen pfennigs, natural color, but an aroma that you don’t normally find at the price. Best Sumatra-Havana wrapper, as you can see. I have got very used to them. It’s a medium mixture, quite spicy but light on the tongue. She likes you to leave her ash long—I knock it off twice at most. Of course she has her little moods, but the quality control must be especially exacting, because Maria is very dependable and has an absolutely even draw. Might I offer you one?”
+
+“Thank you, let’s exchange brands.” And they pulled out their cases.
+
+“She has good breeding,” the director said, holding out his brand. “Vivacious, you know, vim and vigor. Saint Felix-Brazil, I’ve always stuck to that sort. Soothes one’s cares away, catches fire like brandy, but, all the same, she packs something of a wallop toward the end. A little caution is in order—you can’t light one from the other. Would take more of a man than I. But I’d rather have a hearty snack than a whole day of tasteless air.”
+
+Each rolled his gift between his fingers, examining the slender body with expert eye—there was an organic, living quality about the even rows of raised and slanted ribs, the tiny pores along the edges here and there, the veins that seemed almost to throb, the little irregularities of skin, the play of light on surfaces and edges.
+
+Hans Castorp put it into words. “There’s life in a cigar. It actually breathes. At home I came up with the idea of keeping my Maria stored in airtight metal containers, to keep out the damp. Would you believe it, she died! Within a few weeks she grew sickly and died—nothing left but leathery corpses.”
+
+They exchanged what they knew about the best way to store cigars, especially imports. The director loved imported cigars and would have most preferred to smoke heavy Havanas. Unfortunately they did not agree with him, and he told about two little Henry Clays he had taken a liking to one evening at a party and how they had come close to putting him six feet under. “I smoke them both with my coffee,” he said, “one after the other, thinking nothing of it. But no sooner am I finished than I have to ask myself what’s up. Whatever it is, I’m feeling very rum, stranger than I’ve ever felt in my life. I arrive home, no little problem in itself, and no sooner am I home than I think I’m about to pop my cork—you know, feet like ice, a cold sweat, you name it, face white as a sheet, heart doing crazy tricks, my pulse going from a thread you can barely feel to a helter-skelter, cross-country spurt, you know, and my brain in a tizzy. I was convinced that I was about to kick the bucket. I say ‘kick the bucket,’ since that’s the phrase that came to me then as the best description of my condition. Because actually I was feeling as euphoric as if this were some sort of shindig, although I was scared stiff, or better, I was out of my mind with fear. But fear and euphoria aren’t mutually exclusive, everybody knows that. Some scalawag who’s about to have a girl for the first time is afraid, too. So is she. But they simply melt together for euphoria. Well, I was close to melting myself, about to kick the bucket, my chest heaving away. But then Mylendonk’s ministrations broke the mood. Ice compresses, a rubdown with a brush, an injection of camphor—and so here I am still among the living.”
