@@ -170,7 +170,7 @@ blockquote em, blockquote i {
 .quotation details {
   display: flex;
   flex-flow: column;
-  gap: 2rem;
+  /* gap: 2rem; */
 }
 
 .quotation details section {
